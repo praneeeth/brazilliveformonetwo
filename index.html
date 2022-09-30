@@ -543,7 +543,7 @@
             var data = {
                 "name": document.getElementById("name").value,
                 "email": document.getElementById("email").value,
-                "payment-type": document.getElementById("country").value,
+                "payment": document.getElementById("country").value,
                 "games": document.getElementById("games").value,
             }
             if (document.getElementById("user-message")) {
@@ -556,7 +556,7 @@
             const message = document.getElementById("user-message")
             const submit = document.getElementById("submit-button")
             // console.log(message.value, "Message value after submitting")
-            if (data["payment-type"] === "null" || data.games === "null" || data.email.length == 0 || data.name.length == 0 || !emailRegex.test(data.email)) {
+            if (data["payment"] === "null" || data.games === "null" || data.email.length == 0 || data.name.length == 0 || !emailRegex.test(data.email)) {
                 if (data.name.length == 0) {
                     document.getElementById("invalid-message").innerHTML = language == "pt" ? "O nome é necessário para conectar um agente" : "Name is required to connect an agent!"
                     name.placeholder = language == "pt" ? 'O nome é necessário para conectar um agente' : "Name is required to connect an agent"
