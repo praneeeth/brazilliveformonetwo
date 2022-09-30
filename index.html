@@ -275,7 +275,7 @@
                 message.id = "message-header"
                 document.getElementById("offline-message").appendChild(message)
                 const messageBox = document.createElement("textarea")
-                // messageBox.placeholder = language == "id" ? "message" : "message"
+                // messageBox.placeholder = language == "pt" ? "message" : "message"
                 messageBox.type = "text"
                 messageBox.id = "user-message"
                 messageBox.name = "message"
@@ -285,7 +285,7 @@
                 document.getElementById("offline-message").appendChild(messageBox)
                 // messageBox.setAttribute("oninput", messageHandler());
                 const attachment = document.createElement("h6")
-                attachment.innerHTML = language == "pt" ? "Lampiran" : "Attachment"
+                attachment.innerHTML = language == "pt" ? "Attachment" : "Attachment"
                 attachment.id = "attachment-header"
                 document.getElementById("offline-message").appendChild(attachment)
                 const attachmentInput = document.createElement("input")
@@ -545,14 +545,12 @@
                 "email": document.getElementById("email").value,
                 "payment-type": document.getElementById("country").value,
                 "games": document.getElementById("games").value,
-                "phone": document.getElementById("phone").value,
             }
             if (document.getElementById("user-message")) {
                 data.message = document.getElementById("user-message").value
             }
             const name = document.getElementById("name")
             const email = document.getElementById("email")
-            const phone = document.getElementById("phone")
             const country = document.getElementById("country")
             const games = document.getElementById("games")
             const message = document.getElementById("user-message")
@@ -564,7 +562,6 @@
                     name.placeholder = language == "pt" ? 'O nome é necessário para conectar um agente' : "Name is required to connect an agent"
                     name.classList.add('invalid-placeholder');
                     email.classList.remove("invalid-placeholder");
-                    phone.classList.remove("invalid-placeholder")
                     message.classList.remove("invalid-placeholder")
                     name.focus();
                 }
@@ -573,7 +570,6 @@
                     email.placeholder = language == "pt" ? 'O e-mail é necessário para conectar um agente!' : "Email is required to connect an agent"
                     email.classList.add('invalid-placeholder');
                     name.classList.remove("invalid-placeholder");
-                    phone.classList.remove("invalid-placeholder")
                     message.classList.remove("invalid-placeholder")
                     email.focus();
                 }
@@ -581,7 +577,6 @@
                     document.getElementById("invalid-message").innerHTML = language == "pt" ? "É necessário um e-mail válido para conectar um agente" : "Valid email is required to connect an agent"
                     email.placeholder = language == "pt" ? 'É necessário um e-mail válido para conectar um agente' : "Valid email is required to connect an agent"
                     name.classList.remove("invalid-placeholder");
-                    phone.classList.remove("invalid-placeholder")
                     message.classList.remove("invalid-placeholder")
                     email.focus();
                 }
@@ -623,7 +618,6 @@
                         document.getElementById("submit-button").disabled = true;
                         name.disabled = true;
                         email.disabled = true;
-                        phone.disabled = true;
                         country.disabled = true;
                         games.disabled = true;
                         submit.disabled = true;
@@ -683,7 +677,6 @@
                     else {
                         name.disabled = true;
                         email.disabled = true;
-                        phone.disabled = true;
                         country.disabled = true;
                         games.disabled = true;
                         submit.disabled = true;
@@ -708,7 +701,6 @@
                 catch (e) {
                     name.disabled = true;
                     email.disabled = true;
-                    phone.disabled = true;
                     country.disabled = true;
                     games.disabled = true;
                     submit.disabled = true;
